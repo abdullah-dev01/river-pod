@@ -1,7 +1,3 @@
-Certainly! Here’s a concise and attractive README for your Flutter project using Riverpod. This README will help others quickly understand what your project is about, how to set it up, and why they might be interested in it.
-
----
-
 # RiverPod Learning Project
 
 Welcome to my **RiverPod Learning Project**! This repository is where I document my journey of learning [RiverPod](https://riverpod.dev/), a powerful state management solution for Flutter apps.
@@ -67,7 +63,3 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to customize this README further based on the specific features and progress of your learning project. Adding screenshots, GIFs, or even short code snippets can make your README even more engaging and informative. Happy coding!
