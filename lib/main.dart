@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:river_pod/day_6/stream_provider_screen.dart';
+import 'package:river_pod/day_7/get_api_screen.dart';
 // https://www.youtube.com/watch?v=UgsLY4QzWXI&list=PLFyjjoCMAPtwG6c3NYceuwmzSymRNAGHz&index=11
 
 void main() {
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
         // home: const FavApp(),
         // home: const Home(),
         // home: const CacheImageScreen(),
-        home: const StreamProviderScreen(),
+        // home: const StreamProviderScreen(),
+        home: const GetApiScreen(),
       ),
     );
   }
