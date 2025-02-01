@@ -39,6 +39,7 @@ dependencies:
   flutter_riverpod: ^2.6.1 # use to manage the provider through widgets
   flutter_ai_toolkit: ^0.6.7
   google_generative_ai: ^0.4.6
+  http: ^1.3.0
 
 dev_dependencies:
   flutter_test:
