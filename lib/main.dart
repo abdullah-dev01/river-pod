@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:river_pod/day_6/stream_provider_screen.dart';
 import 'package:river_pod/day_7/get_api_screen.dart';
+import 'package:river_pod/day_9/utlis/helper.dart';
 // https://www.youtube.com/watch?v=UgsLY4QzWXI&list=PLFyjjoCMAPtwG6c3NYceuwmzSymRNAGHz&index=11
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  await TodoHelper.initialise();
+  // ProviderScope is a widget from flutter_riverpod that enables state management
+  // It must wrap the root widget of the app to make Riverpod providers
+  // accessible throughout the widget tree
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
