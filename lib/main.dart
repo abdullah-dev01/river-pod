@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:river_pod/day_7/get_api_screen.dart';
 import 'package:river_pod/day_9/utlis/helper.dart';
+import 'package:river_pod/day_9/views/home.screen.dart';
 // https://www.youtube.com/watch?v=UgsLY4QzWXI&list=PLFyjjoCMAPtwG6c3NYceuwmzSymRNAGHz&index=11
 
 Future<void> main() async {
@@ -32,7 +32,8 @@ class MyApp extends StatelessWidget {
         // home: const Home(),
         // home: const CacheImageScreen(),
         // home: const StreamProviderScreen(),
-        home: const GetApiScreen(),
+        // home: const GetApiScreen(),
+        home: const TodoHomeScreen(),
       ),
     );
   }

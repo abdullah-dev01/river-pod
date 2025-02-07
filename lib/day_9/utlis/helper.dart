@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:river_pod/day_9/utlis/hive_helper.dart';
 
 class TodoHelper {
   TodoHelper._();
 
   static Future<void> initialise() async {
     try {
-      WidgetsFlutterBinding.ensureInitialized();
-      await Hive.initFlutter();
-      
+      HiveHelper.initialize();
+      // Hive.registerAdapter(TaskModelAdapter());
+      // await Hive.openBox<TaskModel>('tasks');
     } catch (e) {
       debugPrint('Error: $e');
     }
