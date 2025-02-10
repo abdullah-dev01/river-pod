@@ -1,75 +1,71 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:path_provider/path_provider.dart';
 
-class HiveHelper {
-  HiveHelper._(); // Private constructor to prevent instantiation
+class HiveHelper<T> {
+  final String boxName;
+  Box<T>? _box;
 
-  /// Initialize Hive and open required boxes
-  static Future<void> initialize() async {
+  HiveHelper(this.boxName);
+
+  /// Initializes Hive & opens the box
+  Future<void> initialize() async {
     try {
-      WidgetsFlutterBinding.ensureInitialized();
-      final directory = await getApplicationDocumentsDirectory();
-      Hive.init(directory.path);
-      await Hive.initFlutter();
+      if (!Hive.isBoxOpen(boxName)) {
+        _box = await Hive.openBox<T>(boxName);
+        debugPrint('Box "$boxName" opened.');
+      }
     } catch (e) {
-      debugPrint('Error initializing Hive: $e');
+      debugPrint('Error initializing box "$boxName": $e');
     }
   }
 
-  /// Open a box if not already open
-  static Future<void> openBox<T>(String boxName) async {
-    if (!Hive.isBoxOpen(boxName)) {
-      await Hive.openBox<T>(boxName);
+  /// Ensures the box is open before performing actions
+  Future<void> _ensureBoxOpen() async {
+    if (_box == null || !Hive.isBoxOpen(boxName)) {
+      _box = await Hive.openBox<T>(boxName);
     }
   }
 
-  /// Get an already opened box
-  static Box<T>? getBox<T>(String boxName) {
-    if (Hive.isBoxOpen(boxName)) {
-      return Hive.box<T>(boxName);
+  /// Adds or updates an item with a specific key
+  Future<void> addOrUpdateItem(dynamic key, T value) async {
+    await _ensureBoxOpen();
+    await _box?.put(key, value);
+    debugPrint('Item added/updated in "$boxName" with key "$key".');
+  }
+
+  /// Retrieves all items in the box
+  Future<List<T>> getAllItems() async {
+    await _ensureBoxOpen();
+    return _box?.values.toList() ?? [];
+  }
+
+  /// Retrieves an item by key
+  Future<T?> getItem(dynamic key) async {
+    await _ensureBoxOpen();
+    return _box?.get(key);
+  }
+
+  /// Deletes an item by key
+  Future<void> deleteItem(dynamic key) async {
+    await _ensureBoxOpen();
+    if (_box!.containsKey(key)) {
+      await _box?.delete(key);
+      debugPrint('Item deleted from "$boxName" with key "$key".');
     } else {
-      debugPrint("Hive box '$boxName' is not open.");
-      return null;
+      debugPrint("Cannot delete: Item with key '$key' not found.");
     }
   }
 
-  /// Add or update an item in the box
-  static Future<void> addOrUpdateItem<T>(
-    String boxName,
-    dynamic key,
-    T value,
-  ) async {
-    final box = getBox<T>(boxName);
-    if (box != null) {
-      await box.put(key, value);
-    } else {
-      await openBox<T>(boxName);
-      final newBox = getBox<T>(boxName);
-      await newBox?.put(key, value);
-    }
+  /// Clears all items from the box
+  Future<void> clearAllItems() async {
+    await _ensureBoxOpen();
+    await _box?.clear();
+    debugPrint('All items cleared from "$boxName".');
   }
 
-  /// Delete an item from the box
-  static Future<void> deleteItem<T>(String boxName, dynamic key) async {
-    final box = getBox<T>(boxName);
-    if (box != null && box.containsKey(key)) {
-      await box.delete(key);
-    } else {
-      debugPrint(
-          "Cannot delete: Item with key '$key' not found in box '$boxName'.");
-    }
-  }
-
-  /// Retrieve all items from a box
-  static List<T> getAllItems<T>(String boxName) {
-    final box = getBox<T>(boxName);
-    return box?.values.toList() ?? [];
-  }
-
-  /// Retrieve an item from a box
-  static Future<T?> getTask<T>(String id) async {
-    final box = getBox<T>('tasks');
-    return box?.get(id);
+  /// Closes the Hive box
+  Future<void> closeBox() async {
+    await _box?.close();
+    debugPrint('Box "$boxName" closed.');
   }
 }
