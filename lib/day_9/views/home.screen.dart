@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:river_pod/day_9/model/task_model.dart';
 import 'package:river_pod/day_9/view_model/todo_view_model.dart';
 
-class HomeScreen extends ConsumerWidget {
-  const HomeScreen({super.key});
+class TodoHomeScreen extends ConsumerWidget {
+  const TodoHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -12,14 +12,14 @@ class HomeScreen extends ConsumerWidget {
       appBar: AppBar(
         title: const Text('To-Do App'),
       ),
-      body: Column(
+      body: const Column(
         children: [
-          const SizedBox(height: 20),
-          const Text('Tasks'),
-          const SizedBox(height: 20),
-          const AddTaskForm(),
-          const SizedBox(height: 20),
-          const TaskList(),
+          SizedBox(height: 20),
+          Text('Tasks'),
+          SizedBox(height: 20),
+          AddTaskForm(),
+          SizedBox(height: 20),
+          TaskList(),
         ],
       ),
     );
