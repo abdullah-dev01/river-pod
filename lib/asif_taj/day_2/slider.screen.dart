@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:river_pod/day_2/slider_provider.dart';
+import 'package:river_pod/asif_taj/day_2/slider_provider.dart';
 
 /// A `ConsumerWidget` that shows a `Slider` and a `Text` widget.
 ///

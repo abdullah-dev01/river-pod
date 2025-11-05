@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:river_pod/day_9/model/task_model.dart';
-import 'package:river_pod/day_9/view_model/todo_view_model.dart';
+import 'package:river_pod/asif_taj/day_9/model/task_model.dart';
+import 'package:river_pod/asif_taj/day_9/view_model/todo_view_model.dart';
 
 class TodoHomeScreen extends ConsumerWidget {
   const TodoHomeScreen({super.key});

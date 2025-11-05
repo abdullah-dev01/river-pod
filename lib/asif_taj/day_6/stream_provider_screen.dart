@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:river_pod/day_6/stream_provider.dart';
+import 'package:river_pod/asif_taj/day_6/stream_provider.dart';
 
 class StreamProviderScreen extends ConsumerWidget {
   const StreamProviderScreen({super.key});

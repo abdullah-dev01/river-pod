@@ -1,4 +1,4 @@
-import 'package:river_pod/day_4/fav_states.dart';
+import 'package:river_pod/asif_taj/day_4/fav_states.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:riverpod/legacy.dart';
 import 'fav_model.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:river_pod/day_7/post_provider.dart';
+import 'package:river_pod/asif_taj/day_7/post_provider.dart';
 
 class GetApiScreen extends ConsumerWidget {
   const GetApiScreen({super.key});

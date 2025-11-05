@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:river_pod/day_4/fav_provider.dart';
+import 'package:river_pod/asif_taj/day_4/fav_provider.dart';
 
 class FavApp extends ConsumerWidget {
   const FavApp({super.key});

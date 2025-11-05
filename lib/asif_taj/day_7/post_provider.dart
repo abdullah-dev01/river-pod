@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:river_pod/day_5/repo/api_call.dart';
-import 'package:river_pod/day_7/model.dart';
+import 'package:river_pod/asif_taj/day_5/repo/api_call.dart';
+import 'package:river_pod/asif_taj/day_7/model.dart';
 
 final myApiProvider = Provider<MyApi>((ref) => MyApi());
 final postProvider = FutureProvider<List<PostModel>>((ref) async {

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:river_pod/day_7/model.dart';
+import 'package:river_pod/asif_taj/day_7/model.dart';
 import 'package:http/http.dart' as http;
 
 class MyApi {

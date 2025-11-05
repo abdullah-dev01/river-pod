@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:river_pod/day_5/provider/future_provider.dart';
+import 'package:river_pod/asif_taj/day_5/provider/future_provider.dart';
 
 class CacheImageScreen extends ConsumerWidget {
 
