@@ -6,10 +6,8 @@ final myApiProvider = Provider<MyApi>((ref) => MyApi());
 final postProvider = FutureProvider<List<PostModel>>((ref) async {
   try {
     final response = await ref.read(myApiProvider).fetchPostData();
-    print("API Response: $response");
     return response;
   } catch (e) {
-    print("Error fetching posts: $e");
-    throw e; // Ensure error is thrown so UI updates
+    rethrow; // Ensure error is thrown so UI updates
   }
 });

@@ -1,6 +1,6 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:river_pod/day_4/fav_states.dart';
-
+import 'package:flutter_riverpod/legacy.dart';
+import 'package:riverpod/legacy.dart';
 import 'fav_model.dart';
 
 final favProvider = StateNotifierProvider<FavNotifier, FavStates>((ref) {
@@ -58,5 +58,4 @@ class FavNotifier extends StateNotifier<FavStates> {
   //     favItems: state.allItems,
   //   );
   // }
-
 }

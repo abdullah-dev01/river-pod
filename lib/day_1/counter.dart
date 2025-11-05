@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
+import 'package:riverpod/legacy.dart';
 
 final counter = StateProvider<int>((ref) {
   // StateProvider is a type of provider that holds a single value.
@@ -17,7 +19,7 @@ final switchExample = StateProvider<bool>((ref) {
 class CounterExample extends ConsumerWidget {
   const CounterExample({super.key});
 
-  @override 
+  @override
   Widget build(BuildContext context, WidgetRef ref) {
     // ref.watch() is a function that reads the value of a provider.
     // It will automatically rebuild the widget when the provider's value changes.

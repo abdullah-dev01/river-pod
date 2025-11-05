@@ -1,4 +1,5 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
+import 'package:riverpod/legacy.dart';
 
 final itemProvider = StateNotifierProvider<ItemNotifier, List<Item>>((ref) {
   return ItemNotifier();

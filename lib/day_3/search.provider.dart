@@ -1,4 +1,5 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
+import 'package:riverpod/legacy.dart';
 
 final searchProvider = StateNotifierProvider<SearchNotifier, SearchSate>((ref) {
   return SearchNotifier();

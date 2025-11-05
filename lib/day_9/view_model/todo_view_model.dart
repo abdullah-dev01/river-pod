@@ -1,6 +1,7 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:river_pod/day_9/model/task_model.dart';
 import 'package:river_pod/day_9/utlis/hive_helper.dart';
+import 'package:flutter_riverpod/legacy.dart';
+import 'package:riverpod/legacy.dart';
 
 /// StateNotifier and StateNotifierProvider
 ///
